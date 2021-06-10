@@ -6,7 +6,7 @@ resource "aws_launch_configuration" "web" {
   key_name = var.user06_keyname
   security_groups = [
     aws_security_group.bastion.id,
-    aws_default_security_group.user06_default.id,
+    aws_default_security_group.user06_default.id
   ]
   associate_public_ip_address = true
     
