@@ -16,10 +16,11 @@ resource "aws_cloudwatch_metric_alarm" "web_cpu_alarm_down" {
   statistic = "Average"
   threshold = "10"
 
-  #dimensions {
-  #  AutoScalingGroupName = "${aws_autoscaling_group.web.name}"
-  #:}
+  dimensions = {
+    AutoScalingGroupName = aws_autoscaling_group.user30-asg.name
+  }
 
   alarm_description = "This metric monitor EC2 instance CPU utilization"
   alarm_actions = [aws_autoscaling_policy.web_policy_down.arn]
+  ok_actions = [aws_autoscaling_policy.web_policy_down.arn]
 }
