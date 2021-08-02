@@ -24,7 +24,7 @@ resource "aws_autoscaling_group" "user30-asg" {
 
   vpc_zone_identifier  = [
     aws_subnet.user30-subnet1.id,
-    aws_subnet.user30-subnet1.id
+    aws_subnet.user30-subnet2.id
   ]
 
   # Required to redeploy without an outage.
